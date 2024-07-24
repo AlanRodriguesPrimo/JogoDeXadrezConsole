@@ -1,5 +1,4 @@
-﻿using Tabuleiro;
-
+﻿
 namespace tabuleiro
 {
     class Peca
