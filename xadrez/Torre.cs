@@ -39,20 +39,6 @@ namespace xadrez
                 }
                 pos.Linha = pos.Linha - 1;
             }
-
-            //direita
-            pos.definirValores(Posicao.Linha, Posicao.Coluna +1);
-
-            while (Tab.posicaoValida(pos) && podeMover(pos))
-            {
-                mat[pos.Linha, pos.Coluna] = true;
-                if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
-                {
-                    break;
-                }
-                pos.Linha = pos.Linha + 1;
-            }
-
             //abaixo
             pos.definirValores(Posicao.Linha + 1, Posicao.Coluna);
 
@@ -66,6 +52,19 @@ namespace xadrez
                 pos.Linha = pos.Linha + 1;
             }
 
+            //direita
+            pos.definirValores(Posicao.Linha, Posicao.Coluna +1);
+
+            while (Tab.posicaoValida(pos) && podeMover(pos))
+            {
+                mat[pos.Linha, pos.Coluna] = true;
+                if (Tab.peca(pos) != null && Tab.peca(pos).Cor != Cor)
+                {
+                    break;
+                }
+                pos.Coluna = pos.Coluna + 1;
+            }
+
             //esquerda
             pos.definirValores(Posicao.Linha, Posicao.Coluna -1);
 
@@ -76,7 +75,7 @@ namespace xadrez
                 {
                     break;
                 }
-                pos.Linha = pos.Linha - 1;
+                pos.Coluna = pos.Coluna - 1;
             }
 
 
