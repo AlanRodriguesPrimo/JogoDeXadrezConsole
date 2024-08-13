@@ -33,7 +33,7 @@ namespace tabuleiro
                 throw new TabuleiroException("Já existe uma peça nessa posição!");
             }
             Pecas[pos.Linha, pos.Coluna] = p;
-            p.Posicao = pos;
+            p.posicao = pos;
         }
 
         public Peca retirarPeca(Posicao pos)
@@ -43,7 +43,7 @@ namespace tabuleiro
                 return null;
             }
             Peca aux = peca(pos);
-            aux.Posicao = null;
+            aux.posicao = null;
             Pecas[pos.Linha, pos.Coluna] = null;
             return aux;
         }

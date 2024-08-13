@@ -28,7 +28,7 @@ namespace xadrez
             Posicao pos = new Posicao(0, 0);
 
             //acima
-            pos.definirValores(Posicao.Linha - 1, Posicao.Coluna);
+            pos.definirValores(posicao.Linha - 1, posicao.Coluna);
             
             while(Tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -40,7 +40,7 @@ namespace xadrez
                 pos.Linha = pos.Linha - 1;
             }
             //abaixo
-            pos.definirValores(Posicao.Linha + 1, Posicao.Coluna);
+            pos.definirValores(posicao.Linha + 1, posicao.Coluna);
 
             while (Tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -53,7 +53,7 @@ namespace xadrez
             }
 
             //direita
-            pos.definirValores(Posicao.Linha, Posicao.Coluna +1);
+            pos.definirValores(posicao.Linha, posicao.Coluna +1);
 
             while (Tab.posicaoValida(pos) && podeMover(pos))
             {
@@ -66,7 +66,7 @@ namespace xadrez
             }
 
             //esquerda
-            pos.definirValores(Posicao.Linha, Posicao.Coluna -1);
+            pos.definirValores(posicao.Linha, posicao.Coluna -1);
 
             while (Tab.posicaoValida(pos) && podeMover(pos))
             {
